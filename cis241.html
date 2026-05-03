@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jeremy Kirkpatrick – CIS 241 Dynamic Web Development project documentation and live demos." />
+  <title>CIS 241 Dynamic Web Dev | Jeremy Kirkpatrick</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    .req-badge {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 7px;
+      padding: 3px 8px;
+      margin-left: 10px;
+      background: rgba(5,255,161,0.1);
+      border: 1px solid rgba(5,255,161,0.45);
+      color: var(--green);
+      vertical-align: middle;
+      letter-spacing: 1px;
+    }
+
+    .section-label {
+      font-family: var(--font-pixel);
+      font-size: 9px;
+      color: var(--green);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 48px 0 6px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <span class="nav-cursor" aria-hidden="true">▶</span> JK.EXE
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html"    class="nav-link">[ HOME ]</a></li>
+      <li><a href="syllabi.html"  class="nav-link">[ SYLLABI ]</a></li>
+      <li><a href="projects.html" class="nav-link">[ PROJECTS ]</a></li>
+      <li><a href="cis241.html"   class="nav-link active">[ CIS 241 ]</a></li>
+      <li><a href="cis266.html"   class="nav-link">[ CIS 266 ]</a></li>
+      <li><a href="resume.html"   class="nav-link">[ RESUME ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================================================
+       PAGE HERO
+       ========================================================= -->
+  <div class="page-hero">
+    <p class="page-badge">SOUTHEAST TECHNICAL COLLEGE &nbsp;·&nbsp; CIS 241 — DYNAMIC WEB DEVELOPMENT</p>
+    <h1 class="page-title">
+      <span class="text-cyan">◈</span>&nbsp; DYNAMIC PROJECTS &nbsp;<span class="text-cyan">◈</span>
+    </h1>
+    <p class="page-subtitle">PHP/MySQL dynamic web applications with working live demos.</p>
+  </div>
+
+  <!-- =========================================================
+       CONTENT
+       ========================================================= -->
+  <main class="projects-section" aria-label="CIS 241 project showcase">
+
+    <!-- ══════════════════════════════════════════════════════
+         PROJECT 1 — USER AUTH SYSTEM (PHP/MySQL — DB DEMO)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Project — PHP/MySQL DB Demo</p>
+    <p class="project-group-label">── PROJECT 01 ────────────────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-auth-title">
+      <div class="stripe purple" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-auth-title">
+            User Authentication System
+            <span class="req-badge">LIVE DB DEMO</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--purple);">CIS 241</span> — Dynamic Web Development
+            &nbsp;·&nbsp; Unit 3 &nbsp;·&nbsp; 2025
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A secure user authentication system built with PHP and MySQL. Implements full
+          registration and login flows with bcrypt password hashing, persistent
+          "remember me" sessions via secure cookies, and protected page routing. Built with
+          a clean MVC-style separation between models, views, and session logic. Uses PDO
+          prepared statements throughout to prevent SQL injection — skills reinforced in
+          CIS 225 Secure Programming.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">PDO</span>
+          <span class="tech-tag" role="listitem">Sessions &amp; Cookies</span>
+          <span class="tech-tag" role="listitem">Password Hashing</span>
+          <span class="tech-tag" role="listitem">MVC Pattern</span>
+          <span class="tech-tag" role="listitem">CSS3</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px; flex-wrap:wrap; gap:10px;">
+          <a href="http://jeremykirkpatrick.gt.tc/userauthsystem/public/"
+             class="btn btn-primary" target="_blank" rel="noopener">► LIVE DEMO</a>
+          <a href="https://github.com/twitchout/userauthsystem"
+             class="btn btn-secondary" target="_blank" rel="noopener">► VIEW ON GITHUB</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         PROJECT 2 — FORUM / COMMUNITY APP (PHP/MySQL)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Project — PHP/MySQL</p>
+    <p class="project-group-label">── PROJECT 02 ────────────────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-forum-title">
+      <div class="stripe cyan" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-forum-title">
+            Community Forum Application
+            <span class="req-badge">LIVE DB DEMO</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--cyan);">CIS 241</span> — Dynamic Web Development
+            &nbsp;·&nbsp; Unit 2 Project &nbsp;·&nbsp; 2025
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A PHP/MySQL community forum application. Users can register, log in, post
+          messages to topic threads, and view other members' posts. Implements session
+          management, database-driven content rendering, input sanitization, and error
+          handling. Structured with separate model, view, and controller layers following
+          MVC conventions.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">Sessions</span>
+          <span class="tech-tag" role="listitem">MVC Pattern</span>
+          <span class="tech-tag" role="listitem">HTML / CSS</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px;">
+          <a href="http://jeremykirkpatrick.gt.tc/Unit-2-Project/"
+             class="btn btn-primary" target="_blank" rel="noopener">► LIVE DEMO</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         PROJECT 3 — AJAX QUIZ (AJAX + PHP/MySQL)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Project — AJAX + PHP/MySQL</p>
+    <p class="project-group-label">── PROJECT 03 ────────────────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-quiz-title">
+      <div class="stripe pink" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-quiz-title">
+            AJAX Quiz Application
+            <span class="req-badge">LIVE DB DEMO</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--pink);">CIS 241</span> — Dynamic Web Development
+            &nbsp;·&nbsp; 2025
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A dynamic quiz application that loads questions and validates answers
+          asynchronously using AJAX. Questions and answers are stored in and retrieved from
+          a MySQL database via PHP. Demonstrates dynamic page updates without full reloads,
+          real-time feedback, and database-driven content delivery.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">AJAX</span>
+          <span class="tech-tag" role="listitem">JavaScript</span>
+          <span class="tech-tag" role="listitem">HTML / CSS</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px;">
+          <a href="http://jeremykirkpatrick.gt.tc/ajaxQuiz/index2.php"
+             class="btn btn-primary" target="_blank" rel="noopener">► LIVE DEMO</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         PROJECT 4 — DB ADMIN CRUD (PHP/MySQL ch21)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Project — PHP/MySQL CRUD</p>
+    <p class="project-group-label">── PROJECT 04 ────────────────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-crud-title">
+      <div class="stripe yellow" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-crud-title">
+            Database Admin CRUD Application
+            <span class="req-badge">LIVE DB DEMO</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--yellow);">CIS 241</span> — Dynamic Web Development
+            &nbsp;·&nbsp; Chapter 21 Exercise
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A full Create, Read, Update, Delete (CRUD) administration interface built with PHP
+          and MySQL. Supports listing all database records, adding new entries, editing
+          existing records inline, and deleting records — all driven by parameterized SQL
+          queries. Demonstrates the complete data lifecycle of a dynamic database-backed
+          web application.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">Full CRUD</span>
+          <span class="tech-tag" role="listitem">Sessions</span>
+          <span class="tech-tag" role="listitem">MVC Pattern</span>
+          <span class="tech-tag" role="listitem">HTML / CSS</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px;">
+          <a href="http://jeremykirkpatrick.gt.tc/ch21_ex2/"
+             class="btn btn-primary" target="_blank" rel="noopener">► LIVE DEMO</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div>
+      <p class="footer-insert" aria-hidden="true">◄ INSERT COIN TO CONTINUE ►</p>
+      <p class="footer-copy">
+        © 2026 Jeremy Kirkpatrick &nbsp;·&nbsp; Southeast Technical College &nbsp;·&nbsp;
+        <a href="https://github.com/twitchout" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-lives" aria-hidden="true">♥ ♥ ♥</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

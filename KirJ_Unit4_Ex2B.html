@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KirJ Unit4 Ex2B – Jeremy Kirkpatrick</title>
+  <link rel="stylesheet" href="https://twitchout.github.io/ElectronicPortfolio/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    .submit-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 80px 32px 80px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .submit-badge {
+      font-family: var(--font-pixel);
+      font-size: 8px;
+      color: var(--cyan);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+
+    .submit-title {
+      font-family: var(--font-pixel);
+      font-size: clamp(13px, 2vw, 20px);
+      color: var(--white);
+      text-shadow: var(--glow-cyan);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .submit-card {
+      background: rgba(21, 0, 58, 0.75);
+      border: 2px solid rgba(1,205,254,0.35);
+      padding: 44px 40px;
+      position: relative;
+    }
+
+    .submit-card::before,
+    .submit-card::after {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      border-color: var(--cyan);
+      border-style: solid;
+    }
+    .submit-card::before { top: -2px;    left: -2px;   border-width: 3px 0 0 3px; }
+    .submit-card::after  { bottom: -2px; right: -2px;  border-width: 0 3px 3px 0; }
+
+    .submit-name {
+      font-family: var(--font-pixel);
+      font-size: clamp(14px, 2.2vw, 22px);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .submit-sub {
+      font-family: var(--font-mono);
+      font-size: 22px;
+      color: var(--dim);
+      margin-bottom: 36px;
+    }
+
+    .portfolio-link {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 10px;
+      padding: 16px 32px;
+      color: var(--bg);
+      background: var(--cyan);
+      border: none;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background var(--trans), box-shadow var(--trans);
+    }
+
+    .portfolio-link:hover {
+      background: var(--white);
+      box-shadow: var(--glow-cyan);
+    }
+
+    .portfolio-url {
+      font-family: var(--font-mono);
+      font-size: 18px;
+      color: var(--muted);
+      margin-top: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <div class="submit-wrap">
+
+    <p class="submit-badge">◈ CIS 266 — UNIT 4 EXERCISE 2B ◈</p>
+
+    <h1 class="submit-title">ELECTRONIC PORTFOLIO<br />SUBMISSION</h1>
+
+    <div class="submit-card">
+
+      <p class="submit-name">JEREMY KIRKPATRICK</p>
+      <p class="submit-sub">Unit4_Ex2B Electronic Portfolio</p>
+
+      <a href="https://twitchout.github.io/ElectronicPortfolio/"
+         class="portfolio-link"
+         target="_blank" rel="noopener">
+        ► Jeremy Kirkpatrick — Unit4_Ex2B Electronic Portfolio
+      </a>
+
+      <p class="portfolio-url">
+        https://twitchout.github.io/ElectronicPortfolio/
+      </p>
+
+    </div>
+
+  </div>
+
+  <script src="https://twitchout.github.io/ElectronicPortfolio/js/main.js"></script>
+</body>
+</html>

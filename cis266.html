@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jeremy Kirkpatrick – CIS 266 Web Services project documentation and demos." />
+  <title>CIS 266 Web Services | Jeremy Kirkpatrick</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Page-specific overrides ─────────────────────────── */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .demo-thumb {
+      border: 1px solid rgba(1,205,254,0.25);
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color var(--trans), transform var(--trans);
+    }
+
+    .demo-thumb:hover {
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .demo-thumb img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.88;
+    }
+
+    .demo-thumb figcaption {
+      font-family: var(--font-mono);
+      font-size: 17px;
+      color: var(--dim);
+      padding: 6px 10px;
+      background: rgba(1,205,254,0.06);
+    }
+
+    .section-label {
+      font-family: var(--font-pixel);
+      font-size: 9px;
+      color: var(--cyan);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 48px 0 6px;
+      opacity: 0.7;
+    }
+
+    .req-badge {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 7px;
+      padding: 3px 8px;
+      margin-left: 10px;
+      background: rgba(185,103,255,0.15);
+      border: 1px solid rgba(185,103,255,0.5);
+      color: var(--purple);
+      vertical-align: middle;
+      letter-spacing: 1px;
+    }
+
+    .role-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+    }
+
+    .role-list li {
+      font-family: var(--font-mono);
+      font-size: 19px;
+      color: var(--dim);
+      padding: 3px 0;
+    }
+
+    .role-list li::before {
+      content: "▸ ";
+      color: var(--cyan);
+    }
+
+    .role-list li strong {
+      color: var(--white);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <span class="nav-cursor" aria-hidden="true">▶</span> JK.EXE
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html"    class="nav-link">[ HOME ]</a></li>
+      <li><a href="syllabi.html"  class="nav-link">[ SYLLABI ]</a></li>
+      <li><a href="projects.html" class="nav-link">[ PROJECTS ]</a></li>
+      <li><a href="cis241.html"   class="nav-link">[ CIS 241 ]</a></li>
+      <li><a href="cis266.html"   class="nav-link active">[ CIS 266 ]</a></li>
+      <li><a href="resume.html"   class="nav-link">[ RESUME ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================================================
+       PAGE HERO
+       ========================================================= -->
+  <div class="page-hero">
+    <p class="page-badge">SOUTHEAST TECHNICAL COLLEGE &nbsp;·&nbsp; CIS 266 — WEB SERVICES</p>
+    <h1 class="page-title">
+      <span class="text-cyan">◈</span>&nbsp; WEB SERVICES PROJECTS &nbsp;<span class="text-cyan">◈</span>
+    </h1>
+    <p class="page-subtitle">RESTful APIs, AJAX/JSON, PHP/MySQL, WCF, and Socket.IO team projects.</p>
+  </div>
+
+  <!-- =========================================================
+       CONTENT
+       ========================================================= -->
+  <main class="projects-section" aria-label="CIS 266 project showcase">
+
+    <!-- ══════════════════════════════════════════════════════
+         UNIT 2 EX 3 — RESTful AJAX-JSON-PHP-MySQL
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Project</p>
+    <p class="project-group-label">── UNIT 2 EX 3 ───────────────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-u2ex3-title">
+      <div class="stripe cyan" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-u2ex3-title">
+            KirJ_Unit2_Ex3 — RESTful AJAX-JSON Web Service
+            <span class="req-badge">DYNAMIC</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--cyan);">CIS 266</span> — Web Services
+            &nbsp;·&nbsp; Spring 2026
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A full RESTful web service architecture built with PHP and MySQL. The
+          <strong>Service Provider</strong> exposes two JSON endpoints: one that returns a
+          single course record by primary key (<code>KirJ_Students_API.php</code>) and one
+          that returns all records (<code>KirJ_Students_DisplayAll_API.php</code>). Both use
+          an OOP data-access class (<code>KirJ_Students_Access</code>) with prepared
+          statements (PDO-style MySQLi) against the <code>students</code> / <code>KirJ_courses</code>
+          MySQL table. The <strong>Service Client</strong> consumes those endpoints via
+          AJAX/jQuery, rendering results dynamically via innerHTML — no page reload.
+          Includes a standalone OOP tester and a raw API tester page.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP 8</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">JSON</span>
+          <span class="tech-tag" role="listitem">RESTful API</span>
+          <span class="tech-tag" role="listitem">AJAX / jQuery</span>
+          <span class="tech-tag" role="listitem">innerHTML</span>
+          <span class="tech-tag" role="listitem">OOP PHP</span>
+          <span class="tech-tag" role="listitem">Prepared Statements</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px; flex-wrap:wrap; gap:10px;">
+          <a href="http://jeremykirkpatrick.gt.tc/KirJ_Unit2_Ex3/" class="btn btn-primary"
+             target="_blank" rel="noopener">► LIVE DEMO</a>
+          <a href="http://jeremykirkpatrick.gt.tc/KirJ_Unit2_Ex3/ServiceProvider/KirJ_Students_API.php?courseCode=CIS266"
+             class="btn btn-secondary" target="_blank" rel="noopener">► RAW JSON API</a>
+          <a href="http://jeremykirkpatrick.gt.tc/KirJ_Unit2_Ex3/ServiceClient/KirJ_DisplayAll_Client.html"
+             class="btn btn-secondary" target="_blank" rel="noopener">► DISPLAY ALL CLIENT</a>
+          <a href="http://jeremykirkpatrick.gt.tc/KirJ_Unit2_Ex3/ServiceClient/KirJ_DisplayOne_Client.html"
+             class="btn btn-secondary" target="_blank" rel="noopener">► DISPLAY ONE CLIENT</a>
+        </div>
+
+        <!-- Screenshots -->
+        <p class="section-label" style="margin-top:28px;">Demo Screenshots</p>
+        <div class="demo-grid" role="list" aria-label="Project screenshots">
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-home.png" alt="Unit2 Ex3 home page" loading="lazy" />
+            <figcaption>Home — project index &amp; link menu</figcaption>
+          </figure>
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-oop-tester.png" alt="OOP tester output" loading="lazy" />
+            <figcaption>OOP Tester — tests KirJ_Students_Access class</figcaption>
+          </figure>
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-api-json.png" alt="Raw JSON API output" loading="lazy" />
+            <figcaption>Raw JSON — API response for courseCode=CIS266</figcaption>
+          </figure>
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-ajax-tester.png" alt="AJAX API tester" loading="lazy" />
+            <figcaption>AJAX Tester — form-driven API request</figcaption>
+          </figure>
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-display-one.png" alt="Display one client" loading="lazy" />
+            <figcaption>Display One — single record via AJAX innerHTML</figcaption>
+          </figure>
+
+          <figure class="demo-thumb" role="listitem">
+            <img src="img/cis266/unit2ex3-display-all.png" alt="Display all client" loading="lazy" />
+            <figcaption>Display All — full table via AJAX innerHTML</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRUM 3 — CRUD JSON-PHP-MySQL RESTful Web Service
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Dynamic Team Project</p>
+    <p class="project-group-label">── SCRUM 3 TEAM PROJECT ──────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-scrum3-title">
+      <div class="stripe purple" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-scrum3-title">
+            CRUD Employees — JSON-PHP-MySQL RESTful Web Service
+            <span class="req-badge">DYNAMIC · TEAM</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--purple);">CIS 266</span> — Web Services &nbsp;·&nbsp; Scrum Sprint 3
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A unique team-built RESTful CRUD web service using PHP and MySQL against an
+          <code>employees</code> database. The service supports full Create, Read, Update,
+          and Delete operations via HTTP. Each endpoint returns JSON, following RESTful
+          conventions. The front-end UI allows users to interact with employee records
+          directly through the browser with no page reloads.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">PHP</span>
+          <span class="tech-tag" role="listitem">MySQL</span>
+          <span class="tech-tag" role="listitem">JSON</span>
+          <span class="tech-tag" role="listitem">RESTful CRUD</span>
+          <span class="tech-tag" role="listitem">MySQLi</span>
+          <span class="tech-tag" role="listitem">HTML / CSS</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px;">
+          <a href="http://jeremykirkpatrick.gt.tc/CRUD/" class="btn btn-primary"
+             target="_blank" rel="noopener">► LIVE DEMO</a>
+          <a href="img/cis266/scrum3-presentation.pptx" class="btn btn-secondary"
+             download>► DOWNLOAD SLIDES</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         UNIT 3 — WCF CALCULATOR (STATIC)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Static Project</p>
+    <p class="project-group-label">── UNIT 3 — WCF CALCULATOR ──────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-wcf-title">
+      <div class="stripe yellow" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-wcf-title">
+            WCF Calculator Web Service
+            <span class="req-badge">STATIC · .NET</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--yellow);">CIS 266</span> — Web Services &nbsp;·&nbsp; Unit 3
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          A Windows Communication Foundation (WCF) SOAP-based web service built with C# and
+          .NET. The solution consists of a <strong>CalculatorService</strong> project that
+          implements a <code>[ServiceContract]</code> interface exposing Add, Subtract,
+          Multiply, and Divide operations, and a <strong>CalculatorClient</strong> project
+          that consumes the service. Demonstrates the SOAP/WSDL service model as a contrast
+          to the RESTful JSON approach used elsewhere in CIS 266.
+        </p>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used">
+          <span class="tech-tag" role="listitem">C#</span>
+          <span class="tech-tag" role="listitem">.NET WCF</span>
+          <span class="tech-tag" role="listitem">SOAP</span>
+          <span class="tech-tag" role="listitem">WSDL</span>
+          <span class="tech-tag" role="listitem">ServiceContract</span>
+          <span class="tech-tag" role="listitem">OperationContract</span>
+          <span class="tech-tag" role="listitem">Visual Studio</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px;">
+          <a href="https://github.com/twitchout" class="btn btn-secondary"
+             target="_blank" rel="noopener">► VIEW ON GITHUB</a>
+        </div>
+
+        <!-- WCF service interface code block -->
+        <div class="pixel-terminal" style="margin-top:20px; font-size:17px; line-height:1.5;">
+          <div class="terminal-header">
+            <span class="t-dot red" aria-hidden="true"></span>
+            <span class="t-dot yellow" aria-hidden="true"></span>
+            <span class="t-dot green" aria-hidden="true"></span>
+            <span class="t-title">ICalculatorService.cs</span>
+          </div>
+          <div class="terminal-body" style="padding:14px 18px; overflow-x:auto;">
+<pre style="margin:0; color: var(--green); font-family: var(--font-mono);">[ServiceContract]
+public interface ICalculatorService
+{
+    [OperationContract]
+    double Add(double a, double b);
+
+    [OperationContract]
+    double Subtract(double a, double b);
+
+    [OperationContract]
+    double Multiply(double a, double b);
+
+    [OperationContract]
+    double Divide(double a, double b);
+}</pre>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ══════════════════════════════════════════════════════
+         SCRUM 4 — SOCKET.IO VOTING SYSTEM (STATIC — TEAM)
+         ══════════════════════════════════════════════════════ -->
+    <p class="section-label">Static Team Project</p>
+    <p class="project-group-label">── SCRUM 4 TEAM PROJECT ──────────────────────────────</p>
+
+    <article class="project-card" aria-labelledby="proj-scrum4-title">
+      <div class="stripe pink" aria-hidden="true"></div>
+
+      <div class="project-header">
+        <div class="project-header-left">
+          <h2 id="proj-scrum4-title">
+            Socket.IO Real-Time Voting System
+            <span class="req-badge">STATIC · TEAM</span>
+          </h2>
+          <p class="project-course">
+            <span style="color: var(--pink);">CIS 266</span> — Web Services &nbsp;·&nbsp; Scrum Sprint 4
+          </p>
+        </div>
+        <span class="project-status complete">✓ COMPLETE</span>
+      </div>
+
+      <div class="project-body">
+        <p class="project-desc">
+          Team project building a real-time voting application using Socket.IO (Node.js
+          WebSocket library). The system broadcasts live vote counts to all connected clients
+          without polling. Each team member owned a specific domain: Tristan Lake handled
+          server-side Socket.IO logic, Devon Leedy built the client-side interface, and
+          Jeremy Kirkpatrick (my role) handled debugging, testing, and the final presentation.
+        </p>
+
+        <ul class="role-list" aria-label="Team roles">
+          <li><strong>Tristan Lake</strong> — Server-side (Socket.IO)</li>
+          <li><strong>Devon Leedy</strong> — Client-side interface</li>
+          <li><strong>Jeremy Kirkpatrick</strong> — Debugging / Testing / Presentation</li>
+        </ul>
+
+        <div class="tech-stack" role="list" aria-label="Technologies used" style="margin-top:14px;">
+          <span class="tech-tag" role="listitem">Node.js</span>
+          <span class="tech-tag" role="listitem">Socket.IO</span>
+          <span class="tech-tag" role="listitem">WebSockets</span>
+          <span class="tech-tag" role="listitem">JavaScript</span>
+          <span class="tech-tag" role="listitem">Real-Time Events</span>
+        </div>
+
+        <div class="project-links" style="margin-top:18px; flex-wrap:wrap; gap:10px;">
+          <a href="https://stc.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4b46fe96-a6a3-4a06-906a-b43e002636a3"
+             class="btn btn-primary" target="_blank" rel="noopener">► WATCH DEMO VIDEO</a>
+          <a href="img/cis266/scrum4-slides.pptx" class="btn btn-secondary" download>► DOWNLOAD SLIDES</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div>
+      <p class="footer-insert" aria-hidden="true">◄ INSERT COIN TO CONTINUE ►</p>
+      <p class="footer-copy">
+        © 2026 Jeremy Kirkpatrick &nbsp;·&nbsp; Southeast Technical College &nbsp;·&nbsp;
+        <a href="https://github.com/twitchout" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-lives" aria-hidden="true">♥ ♥ ♥</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
