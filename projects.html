@@ -101,47 +101,54 @@
     </article>
 
     <!-- ══════════════════════════════════════════════════════
-         STAGE 02 — TIMECARD MANAGEMENT SYSTEM
+         STAGE 02 — BANKING APP
          ══════════════════════════════════════════════════════ -->
     <p class="project-group-label">── STAGE 02 ──────────────────────────────────────────</p>
 
-    <article class="project-card" aria-labelledby="proj-timecard-title">
-      <div class="stripe cyan" aria-hidden="true"></div>
+    <article class="project-card" aria-labelledby="proj-bank-title">
+      <div class="stripe yellow" aria-hidden="true"></div>
 
       <div class="project-header">
         <div class="project-header-left">
-          <h2 id="proj-timecard-title">Timecard Management System</h2>
+          <h2 id="proj-bank-title">Secure Banking Application</h2>
           <p class="project-course">
-            <span style="color: var(--cyan);">CIS 296</span> — Advanced MS Web Development
-            &nbsp;·&nbsp; Spring 2026
-            &nbsp;·&nbsp; Group Project
+            <span style="color: var(--yellow);">CIS 225</span> — Secure Programming
+            &nbsp;·&nbsp; 2025–2026
           </p>
         </div>
-        <span class="project-status progress">⚡ IN PROGRESS</span>
+        <span class="project-status complete">✓ COMPLETE</span>
       </div>
 
       <div class="project-body">
         <p class="project-desc">
-          A full-stack timecard management system built with ASP.NET Core 9.0 as a collaborative
-          project with classmates Nova, Zach, and Bruce. The system handles employee management
-          with full CRUD operations, clock in/out time tracking, and automatic overtime
-          calculation for any hours exceeding 40 per week. A built-in reporting module
-          calculates pay with overtime rates. The backend exposes a clean RESTful API documented
-          with Swagger/OpenAPI, backed by SQLite via Entity Framework Core, and validated by
-          21 passing xUnit tests.
+          A full-stack secure banking web application built with Node.js and Express,
+          demonstrating enterprise-grade security practices from CIS 225. The app runs
+          over HTTPS with self-signed certificates and enforces a strict Content Security
+          Policy via Helmet. Security features include bcrypt password hashing, brute-force
+          protection with rate limiting (5 login attempts per 15 minutes), HTTP Parameter
+          Pollution prevention, and server-side input validation on every endpoint via
+          express-validator. User sessions are managed securely with httpOnly, sameSite,
+          and secure cookie flags. The system supports both user and admin roles, with a
+          full audit log tracking all authentication events and transactions. Data is
+          persisted in SQLite via better-sqlite3, with CRUD operations for accounts,
+          deposits, withdrawals, and transfers.
         </p>
         <div class="tech-stack" role="list" aria-label="Technologies used">
-          <span class="tech-tag" role="listitem">C#</span>
-          <span class="tech-tag" role="listitem">ASP.NET Core 9.0</span>
-          <span class="tech-tag" role="listitem">Entity Framework Core 9</span>
+          <span class="tech-tag" role="listitem">Node.js</span>
+          <span class="tech-tag" role="listitem">Express</span>
           <span class="tech-tag" role="listitem">SQLite</span>
-          <span class="tech-tag" role="listitem">REST API</span>
-          <span class="tech-tag" role="listitem">Swagger / OpenAPI</span>
-          <span class="tech-tag" role="listitem">xUnit</span>
-          <span class="tech-tag" role="listitem">Git</span>
+          <span class="tech-tag" role="listitem">bcrypt</span>
+          <span class="tech-tag" role="listitem">Helmet (CSP / HSTS)</span>
+          <span class="tech-tag" role="listitem">Rate Limiting</span>
+          <span class="tech-tag" role="listitem">HTTPS / TLS</span>
+          <span class="tech-tag" role="listitem">express-validator</span>
+          <span class="tech-tag" role="listitem">Session Auth</span>
+          <span class="tech-tag" role="listitem">Audit Logging</span>
+          <span class="tech-tag" role="listitem">Role-Based Access</span>
+          <span class="tech-tag" role="listitem">JavaScript</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/twitchout/Timecard" class="btn btn-secondary"
+          <a href="https://github.com/twitchout/secure-banking-app" class="btn btn-secondary"
              target="_blank" rel="noopener">► VIEW ON GITHUB</a>
         </div>
       </div>
@@ -193,19 +200,20 @@
     </article>
 
     <!-- ══════════════════════════════════════════════════════
-         STAGE 04 — BANKING APP (COMING SOON)
+         STAGE 04 — TIMECARD MANAGEMENT SYSTEM
          ══════════════════════════════════════════════════════ -->
     <p class="project-group-label">── STAGE 04 ──────────────────────────────────────────</p>
 
-    <article class="project-card" aria-labelledby="proj-bank-title">
-      <div class="stripe yellow" aria-hidden="true"></div>
+    <article class="project-card" aria-labelledby="proj-timecard-title">
+      <div class="stripe cyan" aria-hidden="true"></div>
 
       <div class="project-header">
         <div class="project-header-left">
-          <h2 id="proj-bank-title">Secure Banking Application</h2>
+          <h2 id="proj-timecard-title">Timecard Management System</h2>
           <p class="project-course">
-            <span style="color: var(--yellow);">CIS 225</span> — Secure Programming
-            &nbsp;·&nbsp; 2025–2026
+            <span style="color: var(--cyan);">CIS 296</span> — Advanced MS Web Development
+            &nbsp;·&nbsp; Spring 2026
+            &nbsp;·&nbsp; Group Project
           </p>
         </div>
         <span class="project-status complete">✓ COMPLETE</span>
@@ -213,34 +221,26 @@
 
       <div class="project-body">
         <p class="project-desc">
-          A full-stack secure banking web application built with Node.js and Express,
-          demonstrating enterprise-grade security practices from CIS 225. The app runs
-          over HTTPS with self-signed certificates and enforces a strict Content Security
-          Policy via Helmet. Security features include bcrypt password hashing, brute-force
-          protection with rate limiting (5 login attempts per 15 minutes), HTTP Parameter
-          Pollution prevention, and server-side input validation on every endpoint via
-          express-validator. User sessions are managed securely with httpOnly, sameSite,
-          and secure cookie flags. The system supports both user and admin roles, with a
-          full audit log tracking all authentication events and transactions. Data is
-          persisted in SQLite via better-sqlite3, with CRUD operations for accounts,
-          deposits, withdrawals, and transfers.
+          A full-stack timecard management system built with ASP.NET Core 9.0 as a collaborative
+          project with classmates Nova, Zach, and Bruce. The system handles employee management
+          with full CRUD operations, clock in/out time tracking, and automatic overtime
+          calculation for any hours exceeding 40 per week. A built-in reporting module
+          calculates pay with overtime rates. The backend exposes a clean RESTful API documented
+          with Swagger/OpenAPI, backed by SQLite via Entity Framework Core, and validated by
+          21 passing xUnit tests.
         </p>
         <div class="tech-stack" role="list" aria-label="Technologies used">
-          <span class="tech-tag" role="listitem">Node.js</span>
-          <span class="tech-tag" role="listitem">Express</span>
+          <span class="tech-tag" role="listitem">C#</span>
+          <span class="tech-tag" role="listitem">ASP.NET Core 9.0</span>
+          <span class="tech-tag" role="listitem">Entity Framework Core 9</span>
           <span class="tech-tag" role="listitem">SQLite</span>
-          <span class="tech-tag" role="listitem">bcrypt</span>
-          <span class="tech-tag" role="listitem">Helmet (CSP / HSTS)</span>
-          <span class="tech-tag" role="listitem">Rate Limiting</span>
-          <span class="tech-tag" role="listitem">HTTPS / TLS</span>
-          <span class="tech-tag" role="listitem">express-validator</span>
-          <span class="tech-tag" role="listitem">Session Auth</span>
-          <span class="tech-tag" role="listitem">Audit Logging</span>
-          <span class="tech-tag" role="listitem">Role-Based Access</span>
-          <span class="tech-tag" role="listitem">JavaScript</span>
+          <span class="tech-tag" role="listitem">REST API</span>
+          <span class="tech-tag" role="listitem">Swagger / OpenAPI</span>
+          <span class="tech-tag" role="listitem">xUnit</span>
+          <span class="tech-tag" role="listitem">Git</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/twitchout/secure-banking-app" class="btn btn-secondary"
+          <a href="https://github.com/twitchout/Timecard" class="btn btn-secondary"
              target="_blank" rel="noopener">► VIEW ON GITHUB</a>
         </div>
       </div>
