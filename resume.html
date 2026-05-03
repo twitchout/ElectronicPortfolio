@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jeremy Kirkpatrick – Resume. CIS Computer Programming, Southeast Technical College." />
+  <title>Resume | Jeremy Kirkpatrick</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Resume-specific styles ───────────────────────── */
+    .resume-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 32px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Download bar */
+    .resume-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 32px;
+    }
+
+    /* Resume card shell */
+    .resume-card {
+      background: rgba(21, 0, 58, 0.7);
+      border: 2px solid rgba(185,103,255,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .resume-card::before,
+    .resume-card::after {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      border-color: var(--cyan);
+      border-style: solid;
+      z-index: 2;
+    }
+    .resume-card::before { top: -2px;    left: -2px;   border-width: 3px 0 0 3px; }
+    .resume-card::after  { bottom: -2px; right: -2px;  border-width: 0 3px 3px 0; }
+
+    /* Header block */
+    .r-header {
+      background: linear-gradient(135deg, rgba(185,103,255,0.15) 0%, rgba(1,205,254,0.08) 100%);
+      border-bottom: 2px solid rgba(185,103,255,0.4);
+      padding: 36px 40px 28px;
+      text-align: center;
+    }
+
+    .r-name {
+      font-family: var(--font-pixel);
+      font-size: clamp(16px, 2.5vw, 26px);
+      color: var(--white);
+      text-shadow: var(--glow-cyan);
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .r-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 20px;
+      color: var(--dim);
+    }
+
+    .r-contact span { white-space: nowrap; }
+    .r-contact a { color: var(--cyan); text-decoration: underline; }
+    .r-contact a:hover { text-shadow: var(--glow-cyan); }
+
+    .r-sep { color: rgba(185,103,255,0.5); }
+
+    /* Section */
+    .r-section { padding: 28px 40px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .r-section:last-child { border-bottom: none; }
+
+    .r-section-title {
+      font-family: var(--font-pixel);
+      font-size: 10px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid;
+    }
+    .r-section-title.pink   { color: var(--pink);   border-color: var(--pink);   text-shadow: var(--glow-pink); }
+    .r-section-title.cyan   { color: var(--cyan);   border-color: var(--cyan);   text-shadow: var(--glow-cyan); }
+    .r-section-title.purple { color: var(--purple); border-color: var(--purple); text-shadow: var(--glow-purple); }
+    .r-section-title.yellow { color: var(--yellow); border-color: var(--yellow); text-shadow: var(--glow-yellow); }
+    .r-section-title.green  { color: var(--green);  border-color: var(--green);  text-shadow: var(--glow-green); }
+
+    /* Summary */
+    .r-summary {
+      font-size: 22px;
+      color: var(--dim);
+      line-height: 1.75;
+    }
+
+    /* Skills grid */
+    .r-skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .r-skill-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .r-skill-label {
+      font-family: var(--font-pixel);
+      font-size: 8px;
+      color: var(--cyan);
+      white-space: nowrap;
+      min-width: 130px;
+      padding-top: 4px;
+    }
+
+    .r-skill-value {
+      font-size: 20px;
+      color: var(--dim);
+      line-height: 1.6;
+    }
+
+    /* Jobs */
+    .r-job { margin-bottom: 28px; }
+    .r-job:last-child { margin-bottom: 0; }
+
+    .r-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .r-job-title {
+      font-family: var(--font-pixel);
+      font-size: 10px;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .r-job-dates {
+      font-family: var(--font-pixel);
+      font-size: 8px;
+      color: var(--yellow);
+      text-shadow: var(--glow-yellow);
+      white-space: nowrap;
+    }
+
+    .r-job-company {
+      font-family: var(--font-mono);
+      font-size: 20px;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+
+    .r-job-bullets {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .r-job-bullets li {
+      font-size: 20px;
+      color: var(--dim);
+      line-height: 1.6;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    .r-job-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--pink);
+    }
+
+    /* Education rows */
+    .r-edu-item { margin-bottom: 20px; }
+    .r-edu-item:last-child { margin-bottom: 0; }
+
+    .r-edu-school {
+      font-family: var(--font-pixel);
+      font-size: 10px;
+      color: var(--white);
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .r-edu-detail {
+      font-size: 20px;
+      color: var(--dim);
+    }
+
+    /* Tags row for hobbies */
+    .r-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .r-tag {
+      font-family: var(--font-pixel);
+      font-size: 8px;
+      color: var(--purple);
+      border: 1px solid rgba(185,103,255,0.5);
+      padding: 6px 12px;
+      background: rgba(185,103,255,0.07);
+      letter-spacing: 1px;
+    }
+
+    /* Job divider */
+    .r-job-divider {
+      border: none;
+      border-top: 1px dashed rgba(185,103,255,0.2);
+      margin: 24px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .r-header, .r-section { padding: 24px 20px; }
+      .r-skills-grid { grid-template-columns: 1fr; }
+      .resume-wrap { padding: 32px 16px 60px; }
+      .r-job-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-brand">
+      <span class="nav-cursor" aria-hidden="true">▶</span> JK.EXE
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html"    class="nav-link">[ HOME ]</a></li>
+      <li><a href="syllabi.html"  class="nav-link">[ SYLLABI ]</a></li>
+      <li><a href="projects.html" class="nav-link">[ PROJECTS ]</a></li>
+      <li><a href="resume.html"   class="nav-link active">[ RESUME ]</a></li>
+    </ul>
+  </nav>
+
+  <!-- =========================================================
+       PAGE HERO
+       ========================================================= -->
+  <div class="page-hero">
+    <p class="page-badge">JEREMY KIRKPATRICK &nbsp;·&nbsp; SIOUX FALLS, SD</p>
+    <h1 class="page-title">
+      <span class="text-purple">◈</span>&nbsp; RESUME &nbsp;<span class="text-purple">◈</span>
+    </h1>
+    <p class="page-subtitle">CIS Computer Programming &nbsp;·&nbsp; Southeast Technical College</p>
+  </div>
+
+  <!-- =========================================================
+       RESUME CONTENT
+       ========================================================= -->
+  <div class="resume-wrap">
+
+    <!-- Download action -->
+    <div class="resume-actions">
+      <a href="JeremyKirkpatrickResume.pdf" class="btn btn-primary" download>
+        ▼ DOWNLOAD PDF
+      </a>
+    </div>
+
+    <div class="resume-card" role="main" aria-label="Resume">
+
+      <!-- ── NAME / CONTACT ──────────────────────────── -->
+      <div class="r-header">
+        <h2 class="r-name">JEREMY KIRKPATRICK</h2>
+        <div class="r-contact">
+          <span>📍 Sioux Falls, SD</span>
+          <span class="r-sep">·</span>
+          <span><a href="mailto:jeremy.kirkpatrick1@outlook.com">jeremy.kirkpatrick1@outlook.com</a></span>
+          <span class="r-sep">·</span>
+          <span><a href="https://github.com/twitchout" target="_blank" rel="noopener">github.com/twitchout</a></span>
+        </div>
+      </div>
+
+      <!-- ── PROFESSIONAL SUMMARY ────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title cyan">[ PROFESSIONAL SUMMARY ]</h3>
+        <p class="r-summary">
+          Detail-oriented educator, programmer, and operations leader with expertise in
+          facility management, security, and process optimization. Skilled in full-stack
+          web development, backend integration, and system administration, with a strong
+          background in team leadership, training, and technical troubleshooting.
+          Passionate about building practical, scalable software solutions.
+          Graduating Summer 2026 with a CIS Computer Programming degree from Southeast
+          Technical College.
+        </p>
+      </div>
+
+      <!-- ── TECHNICAL SKILLS ────────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title pink">[ TECHNICAL &amp; PROFESSIONAL SKILLS ]</h3>
+        <div class="r-skills-grid">
+          <div class="r-skill-row">
+            <span class="r-skill-label">PROGRAMMING:</span>
+            <span class="r-skill-value">C#, ASP.NET Core, PHP, JavaScript, Node.js, Express, React, Flutter/Dart, SQL, HTML5, CSS3</span>
+          </div>
+          <div class="r-skill-row">
+            <span class="r-skill-label">WEB / API:</span>
+            <span class="r-skill-value">RESTful APIs, WCF Services, AJAX, JSON, XML, JWT Auth, Swagger/OpenAPI</span>
+          </div>
+          <div class="r-skill-row">
+            <span class="r-skill-label">DATABASES:</span>
+            <span class="r-skill-value">MySQL, SQL Server, SQLite, Entity Framework Core, PDO</span>
+          </div>
+          <div class="r-skill-row">
+            <span class="r-skill-label">SYS ADMIN:</span>
+            <span class="r-skill-value">Linux server management, network security, OCR system configuration</span>
+          </div>
+          <div class="r-skill-row">
+            <span class="r-skill-label">SECURITY:</span>
+            <span class="r-skill-value">Secure coding practices, HTTPS/TLS, bcrypt, rate limiting, input validation, CSP</span>
+          </div>
+          <div class="r-skill-row">
+            <span class="r-skill-label">PROJECT MGMT:</span>
+            <span class="r-skill-value">Team leadership, hiring, training, structured workflow improvements, Git/GitHub</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── EMPLOYMENT HISTORY ──────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title yellow">[ EMPLOYMENT HISTORY ]</h3>
+
+        <!-- Job 1 -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-title">TRANSPORTATION SUPERVISOR &amp; FACILITY SECURITY</span>
+            <span class="r-job-dates">APR 2023 – PRESENT</span>
+          </div>
+          <p class="r-job-company">Qualified Presort Services — Sioux Falls, SD</p>
+          <ul class="r-job-bullets">
+            <li>Manage building security, grounds maintenance, and access control protocols.</li>
+            <li>Issue security clearances and oversee compliance with company policies.</li>
+            <li>Handle customer inquiries related to facility maintenance and security.</li>
+            <li>Oversee route logistics, dispatch operations, and security for customer deliveries.</li>
+            <li>Hire, train, and develop employees within the department.</li>
+          </ul>
+        </div>
+
+        <hr class="r-job-divider" />
+
+        <!-- Job 2 -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-title">PRODUCTION SUPERVISOR &amp; SYSTEM ADMINISTRATOR</span>
+            <span class="r-job-dates">JUN 2019 – APR 2023</span>
+          </div>
+          <p class="r-job-company">Qualified Presort Services — Sioux Falls, SD</p>
+          <ul class="r-job-bullets">
+            <li>Led three departments, supervising hiring, training, and staff scheduling.</li>
+            <li>Administered Linux-based production servers, ensuring operational efficiency.</li>
+            <li>Designed and optimized OCR sorting schemes, reducing processing errors.</li>
+            <li>Troubleshot and repaired OCR machines, improving system uptime.</li>
+          </ul>
+        </div>
+
+        <hr class="r-job-divider" />
+
+        <!-- Job 3 -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-title">ASSISTANT MANAGER</span>
+            <span class="r-job-dates">NOV 2018 – MAY 2019</span>
+          </div>
+          <p class="r-job-company">Taco John's — Sioux Falls, SD</p>
+          <ul class="r-job-bullets">
+            <li>Managed day-shift operations, ensuring smooth workflow and customer service.</li>
+            <li>Oversaw financial reconciliation, deposits, and cash handling.</li>
+            <li>Led team training and performance development.</li>
+          </ul>
+        </div>
+
+        <hr class="r-job-divider" />
+
+        <!-- Job 4 -->
+        <div class="r-job">
+          <div class="r-job-header">
+            <span class="r-job-title">SPRAYER</span>
+            <span class="r-job-dates">MAR 2018 – NOV 2018</span>
+          </div>
+          <p class="r-job-company">Showplace Cabinetry — Sioux Falls, SD</p>
+          <ul class="r-job-bullets">
+            <li>Applied finishes efficiently, ensuring quality control and production speed.</li>
+          </ul>
+        </div>
+
+      </div><!-- /.r-section employment -->
+
+      <!-- ── EDUCATION ────────────────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title purple">[ EDUCATION ]</h3>
+
+        <div class="r-edu-item">
+          <p class="r-edu-school">SOUTHEAST TECHNICAL COLLEGE — SIOUX FALLS, SD</p>
+          <p class="r-edu-detail">
+            <span style="color: var(--green); text-shadow: var(--glow-green);">AAS — Computer Programming</span>
+            &nbsp;·&nbsp; Graduating Summer 2026
+          </p>
+          <p class="r-edu-detail" style="margin-top: 4px; color: var(--muted);">
+            Network Administrator (Previous Study, 2014)
+          </p>
+        </div>
+
+        <div class="r-edu-item">
+          <p class="r-edu-school">WASHINGTON HIGH SCHOOL — SIOUX FALLS, SD</p>
+          <p class="r-edu-detail">High School Diploma &nbsp;·&nbsp; 2011–2014</p>
+        </div>
+      </div>
+
+      <!-- ── HOBBIES ────────────────────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title green">[ HOBBIES &amp; INTERESTS ]</h3>
+        <div class="r-tags" role="list">
+          <span class="r-tag" role="listitem">BUILDING COMPUTERS</span>
+          <span class="r-tag" role="listitem">REACT &amp; NODE.JS DEV</span>
+          <span class="r-tag" role="listitem">COOKING</span>
+          <span class="r-tag" role="listitem">BASKETBALL</span>
+          <span class="r-tag" role="listitem">FOOTBALL</span>
+        </div>
+      </div>
+
+      <!-- ── REFERENCES ─────────────────────────────────── -->
+      <div class="r-section">
+        <h3 class="r-section-title cyan">[ REFERENCES ]</h3>
+        <p class="r-summary">Available upon request.</p>
+      </div>
+
+    </div><!-- /.resume-card -->
+  </div>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div>
+      <p class="footer-insert" aria-hidden="true">◄ INSERT COIN TO CONTINUE ►</p>
+      <p class="footer-copy">
+        © 2026 Jeremy Kirkpatrick &nbsp;·&nbsp; Southeast Technical College &nbsp;·&nbsp;
+        <a href="https://github.com/twitchout" target="_blank" rel="noopener">GitHub</a>
+      </p>
+      <p class="footer-lives" aria-hidden="true">♥ ♥ ♥</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
