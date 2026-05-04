@@ -800,6 +800,16 @@ body::before {
 
 .course-name { color: var(--white); }
 
+.course-page-link {
+  color: var(--cyan);
+  text-decoration: none;
+  transition: var(--trans);
+}
+.course-page-link:hover {
+  color: var(--white);
+  text-shadow: 0 0 8px var(--cyan);
+}
+
 .status-badge {
   font-family: var(--font-pixel);
   font-size: 7px;
